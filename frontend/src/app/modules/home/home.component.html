@@ -1,0 +1,247 @@
+<div class="home-container">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo-section">
+            <div class="logo-mark">
+                <img src="assets/images/logo.png" alt="SUAM Logo" class="logo">
+            </div>
+            <span class="brand-name">SUAM<span class="brand-accent">Portal</span></span>
+        </div>
+
+        <div class="nav-right">
+            <span class="nav-tag">v1.0 Enterprise</span>
+            <button mat-raised-button color="primary" class="login-btn" (click)="navigateToLogin()">
+                Sign In →
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+
+        <div class="hero-content">
+
+            <div class="hero-left">
+
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Enterprise Security Platform
+                </div>
+
+                <h1 class="hero-title">
+                    Smart User<br>
+                    <span class="highlight">Access</span> Management<br>
+                    <span class="hero-title-sub">System</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    A secure enterprise platform for authentication, role-based access,
+                    user administration, and real-time dashboard management.
+                </p>
+
+                <div class="hero-buttons">
+                    <button mat-raised-button color="primary" class="primary-btn" (click)="navigateToLogin()">
+                        Get Started
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button mat-stroked-button class="secondary-btn">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="trust-strip">
+                    <span class="trust-item">
+                        <span class="trust-icon">✓</span> SOC 2 Compliant
+                    </span>
+                    <span class="trust-divider">·</span>
+                    <span class="trust-item">
+                        <span class="trust-icon">✓</span> Zero Trust Architecture
+                    </span>
+                    <span class="trust-divider">·</span>
+                    <span class="trust-item">
+                        <span class="trust-icon">✓</span> AES-256 Encrypted
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Right Hero Card -->
+            <div class="hero-right">
+
+                <div class="hero-card-wrapper">
+
+                    <!-- Decorative ring -->
+                    <div class="card-ring" aria-hidden="true"></div>
+
+                    <div class="glass-card floating-card">
+
+                        <div class="card-header-row">
+                            <img src="assets/images/logo.png" alt="SUAM Logo" class="hero-image">
+                            <div class="card-header-text">
+                                <span class="card-label">SUAM Gateway</span>
+                                <span class="card-version">Enterprise v1.0</span>
+                            </div>
+                        </div>
+
+                        <h3>Secure Enterprise Gateway</h3>
+
+                        <p>
+                            Role-based access control with asynchronous API management.
+                        </p>
+
+                        <div class="card-metrics">
+                            <div class="metric">
+                                <span class="metric-val">500+</span>
+                                <span class="metric-label">Users</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric">
+                                <span class="metric-val">99.9%</span>
+                                <span class="metric-label">Uptime</span>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric">
+                                <span class="metric-val">24/7</span>
+                                <span class="metric-label">Support</span>
+                            </div>
+                        </div>
+
+                        <div class="card-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">All systems operational</span>
+                            <span class="status-time">Last checked 2m ago</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Floating accent cards -->
+                    <div class="accent-card accent-card--top" aria-hidden="true">
+                        <span class="material-icons">shield</span>
+                        <span>Auth Protected</span>
+                    </div>
+
+                    <div class="accent-card accent-card--bottom" aria-hidden="true">
+                        <span class="material-icons">admin_panel_settings</span>
+                        <span>RBAC Enabled</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Section Header -->
+    <!-- Features Section -->
+    <section class="features-section">
+
+        <div class="feature-card">
+            <div class="feature-icon-wrap">
+                <span class="material-icons feature-icon">security</span>
+            </div>
+            <div class="feature-number">01</div>
+            <h3>Secure Authentication</h3>
+            <p>
+                Advanced user authentication with protected routes and granular role-based access control.
+            </p>
+            <div class="feature-footer">
+                <span class="feature-tag">JWT</span>
+                <span class="feature-tag">OAuth 2.0</span>
+                <span class="feature-tag">MFA</span>
+            </div>
+        </div>
+
+        <div class="feature-card feature-card--accent">
+            <div class="feature-icon-wrap">
+                <span class="material-icons feature-icon">admin_panel_settings</span>
+            </div>
+            <div class="feature-number">02</div>
+            <h3>Admin Management</h3>
+            <p>
+                Powerful admin tools to manage users and monitor access control from a central dashboard.
+            </p>
+            <div class="feature-footer">
+                <span class="feature-tag">Dashboard</span>
+                <span class="feature-tag">Audit Logs</span>
+                <span class="feature-tag">RBAC</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon-wrap">
+                <span class="material-icons feature-icon">sync</span>
+            </div>
+            <div class="feature-number">03</div>
+            <h3>Async Processing</h3>
+            <p>
+                Simulated delayed APIs with fully responsive asynchronous UI handling.
+            </p>
+            <div class="feature-footer">
+                <span class="feature-tag">RxJS</span>
+                <span class="feature-tag">Observables</span>
+                <span class="feature-tag">WebSockets</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+
+        <div class="stats-inner">
+
+            <div class="stats-label">Trusted Performance</div>
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <span class="material-icons">group</span>
+                    </div>
+                    <h2>5+</h2>
+                    <p>Active Users</p>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <span class="material-icons">signal_cellular_alt</span>
+                    </div>
+                    <h2>99.9%</h2>
+                    <p>System Uptime</p>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <span class="material-icons">shield</span>
+                    </div>
+                    <h2>24/7</h2>
+                    <p>Secure Monitoring</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="assets/images/logo.png" alt="SUAM Logo" class="footer-logo">
+                <span>SUAM Portal</span>
+            </div>
+            <span class="footer-copy">© 2026 Smart User Access Management System &nbsp;·&nbsp; Enterprise Access
+                Platform</span>
+        </div>
+    </footer>
+
+</div>

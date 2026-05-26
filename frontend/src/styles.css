@@ -1,0 +1,141 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+  /* Light Mode Palette */
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --dashboard-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-color-hover: #1d4ed8;
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --danger-color: #dc2626;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(226, 232, 240, 0.8);
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #475569;
+  --sidebar-active: #eff6ff;
+  --scrollbar-track: #f8fafc;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+body.dark-theme {
+  /* Dark Mode Palette */
+  --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  --dashboard-bg: #020617;
+  --card-bg: rgba(30, 41, 59, 0.75);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #818cf8;
+  --accent-color-hover: #6366f1;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+  --card-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.4);
+  --sidebar-bg: #090d16;
+  --sidebar-text: #f8fafc;
+  --sidebar-active: #1e293b;
+  --scrollbar-track: #0f172a;
+  --scrollbar-thumb: #334155;
+  color-scheme: dark;
+}
+
+/* Base resets & typography */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Outfit', 'Inter', 'Roboto', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+  background-color: var(--dashboard-bg);
+  color: var(--text-primary);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Custom Snackbar styling */
+.error-snackbar {
+  background-color: var(--danger-color) !important;
+  color: white !important;
+}
+
+.warning-snackbar {
+  background-color: var(--warning-color) !important;
+  color: white !important;
+}
+
+.success-snackbar {
+  background-color: var(--success-color) !important;
+  color: white !important;
+}
+
+/* App Loading Spinner Overlay */
+.global-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.global-loader-text {
+  margin-top: 15px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+}

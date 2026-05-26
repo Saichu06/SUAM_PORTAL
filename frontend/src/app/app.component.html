@@ -1,0 +1,115 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="currentUser; else anonymousLayout">
+
+  <!-- Collapsible Left Sidenav -->
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
+
+    <!-- Sidenav Header (Brand) -->
+    <div class="sidenav-header">
+      <div class="logo-circle">
+        <img src="assets/images/logo.png" alt="SUAM Logo" class="logo-img">
+      </div>
+      <span class="logo-title">SUAM</span>
+    </div>
+
+    <!-- Active User Profile Card -->
+    <div class="user-profile-card glass-card">
+      <div class="avatar">
+        <img [src]="currentUser.role === 'Admin' ? 'assets/images/admin.png' : 'assets/images/user.png'"
+          alt="User Avatar" class="avatar-img">
+      </div>
+      <div class="user-info">
+        <span class="username">{{ currentUser.username }}</span>
+        <span class="badge" [ngClass]="currentUser.role === 'Admin' ? 'badge-admin' : 'badge-user'">
+          {{ currentUser.role }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Sidenav Navigation Links -->
+    <mat-nav-list class="nav-list">
+
+
+
+      <a mat-list-item routerLink="/dashboard/user" routerLinkActive="active-link" class="nav-item">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>User Dashboard</span>
+      </a>
+
+      <a mat-list-item routerLink="/dashboard/admin" routerLinkActive="active-link" *ngIf="currentUser.role === 'Admin'"
+        class="nav-item">
+        <mat-icon matListItemIcon>admin_panel_settings</mat-icon>
+        <span matListItemTitle>User Management</span>
+      </a>
+
+    </mat-nav-list>
+
+    <!-- Sidenav Bottom Toolbar -->
+    <div class="sidenav-footer">
+      <button mat-icon-button (click)="toggleDarkMode()" matTooltip="Toggle Dark Mode" class="footer-btn">
+        <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+      <button mat-icon-button (click)="logout()" matTooltip="Logout" class="footer-btn logout-btn-hover">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+
+  </mat-sidenav>
+
+  <!-- Sidenav Content (Body Area) -->
+  <mat-sidenav-content class="main-content">
+
+    <!-- Top Action Toolbar -->
+    <mat-toolbar class="top-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" class="menu-btn">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">Smart User Access Management System</span>
+      <span class="spacer"></span>
+
+      <!-- Right Side Meta Block -->
+      <div class="toolbar-user-details">
+        <span class="last-login" *ngIf="currentUser.lastLogin">
+          Last Session: {{ currentUser.lastLogin | date:'MMM d, y, h:mm a' }}
+        </span>
+
+        <button mat-button [matMenuTriggerFor]="userMenu" class="profile-menu-btn">
+          <div class="small-avatar">
+            <img [src]="currentUser.role === 'Admin' ? 'assets/images/admin.png' : 'assets/images/user.png'"
+              alt="User Avatar" class="avatar-img">
+          </div>
+          <span class="toolbar-username">{{ currentUser.username }}</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu" class="profile-menu">
+          <button mat-menu-item (click)="toggleDarkMode()">
+            <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+            <span>{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="logout()" class="text-danger">
+            <mat-icon class="text-danger">logout</mat-icon>
+            <span>Log Out</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <!-- Subpage Route Container -->
+    <div class="page-container animate-fade-in">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<!-- Anonymous Layout (for Login View) -->
+<ng-template #anonymousLayout>
+  <div class="anonymous-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+
+<!-- Overlay Loader Spinner -->
+<app-loader></app-loader>

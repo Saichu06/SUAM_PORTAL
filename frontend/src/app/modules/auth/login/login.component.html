@@ -1,0 +1,92 @@
+<div class="login-wrapper">
+
+  <!-- Back to Home -->
+  <button class="back-home-btn" routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+    Back to Home
+  </button>
+
+  <!-- Interactive Glow Background Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="login-container glass-panel animate-fade-in">
+    <!-- Brand Header -->
+    <div class="login-header">
+      <div class="logo-box">
+        <img src="assets/images/logo.png" alt="SUAM Logo" class="logo-img">
+      </div>
+      <h1>SUAM</h1>
+      <p class="tagline">Smart User Access Management System</p>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+      <!-- Username / ID Input -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>User ID / Username</mat-label>
+        <input matInput formControlName="username" placeholder="Enter username" autocomplete="username">
+        <mat-icon matPrefix class="form-icon">person</mat-icon>
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+          Username is required.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('username')?.hasError('minlength')">
+          Username must be at least 3 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Input -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+          placeholder="Enter password" autocomplete="current-password">
+        <mat-icon matPrefix class="form-icon">lock</mat-icon>
+        <button mat-icon-button type="button" matSuffix (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Password is required.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+          Password must be at least 5 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Role Selection -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Access Level Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="General User">
+            <img src="assets/images/user.png" class="option-logo-img" alt="General User"> General User
+          </mat-option>
+          <mat-option value="Admin">
+            <img src="assets/images/admin.png" class="option-logo-img" alt="Admin"> Admin
+          </mat-option>
+        </mat-select>
+        <img matPrefix
+          [src]="loginForm.get('role')?.value === 'Admin' ? 'assets/images/admin.png' : 'assets/images/user.png'"
+          class="role-prefix-img" alt="Role">
+        <mat-error *ngIf="loginForm.get('role')?.hasError('required')">
+          Please select your role.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit" class="login-btn"
+        [disabled]="loginForm.invalid || (loadingService.loading$ | async)">
+        <span *ngIf="!(loadingService.loading$ | async)">Authenticate Access</span>
+        <span *ngIf="loadingService.loading$ | async" class="btn-spinner-container">
+          <mat-spinner diameter="20" color="accent"></mat-spinner>
+          Authenticating...
+        </span>
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      <p>Secure Enterprise Gateway &copy; 2026</p>
+    </div>
+  </div>
+</div>
