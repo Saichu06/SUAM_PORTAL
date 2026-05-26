@@ -1,0 +1,86 @@
+[
+  {
+    "id": "REC-1001",
+    "deviceName": "Secure Vault Entry (Sector 7)",
+    "status": "Approved",
+    "accessLevel": "Admin",
+    "timestamp": "2026-05-25T12:45:00.000Z"
+  },
+  {
+    "id": "REC-1002",
+    "deviceName": "Core Database Server",
+    "status": "Approved",
+    "accessLevel": "Write",
+    "timestamp": "2026-05-25T12:40:22.000Z"
+  },
+  {
+    "id": "REC-1003",
+    "deviceName": "Lab Alpha Environmental Controls",
+    "status": "Denied",
+    "accessLevel": "Write",
+    "timestamp": "2026-05-25T12:35:10.000Z"
+  },
+  {
+    "id": "REC-1004",
+    "deviceName": "Office WLAN Gateway",
+    "status": "Approved",
+    "accessLevel": "Read",
+    "timestamp": "2026-05-25T12:15:00.000Z"
+  },
+  {
+    "id": "REC-1005",
+    "deviceName": "HR Document Archive",
+    "status": "Approved",
+    "accessLevel": "Read",
+    "timestamp": "2026-05-25T11:58:44Z"
+  },
+  {
+    "id": "REC-1006",
+    "deviceName": "Finance Ledger System",
+    "status": "Denied",
+    "accessLevel": "Admin",
+    "timestamp": "2026-05-25T11:42:01.000Z"
+  },
+  {
+    "id": "REC-1007",
+    "deviceName": "Backup Power Station B",
+    "status": "Approved",
+    "accessLevel": "Write",
+    "timestamp": "2026-05-25T11:20:15.000Z"
+  },
+  {
+    "id": "REC-1008",
+    "deviceName": "External API Firewall",
+    "status": "Approved",
+    "accessLevel": "Admin",
+    "timestamp": "2026-05-25T10:55:00.000Z"
+  },
+  {
+    "id": "REC-1009",
+    "deviceName": "Development Sandbox-01",
+    "status": "Approved",
+    "accessLevel": "Write",
+    "timestamp": "2026-05-25T10:30:00.000Z"
+  },
+  {
+    "id": "REC-1010",
+    "deviceName": "Corporate Email Server",
+    "status": "Denied",
+    "accessLevel": "Read",
+    "timestamp": "2026-05-25T10:14:22.000Z"
+  },
+  {
+    "id": "REC-1011",
+    "deviceName": "R&D Compute Cluster",
+    "status": "Approved",
+    "accessLevel": "Execute",
+    "timestamp": "2026-05-25T09:45:10.000Z"
+  },
+  {
+    "id": "REC-1012",
+    "deviceName": "Building 3 Smart Elevator",
+    "status": "Approved",
+    "accessLevel": "Read",
+    "timestamp": "2026-05-25T09:12:00.000Z"
+  }
+]

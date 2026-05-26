@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "admin123",
+    "role": "Admin",
+    "lastLogin": "2026-05-26T07:21:25.239Z"
+  },
+  {
+    "id": 2,
+    "username": "user1",
+    "password": "user123",
+    "role": "General User",
+    "lastLogin": "2026-05-25T07:35:51.828Z"
+  },
+  {
+    "id": 3,
+    "username": "Jhonny",
+    "password": "123456",
+    "role": "General User",
+    "lastLogin": "2026-05-26T05:52:35.552Z"
+  },
+  {
+    "id": 4,
+    "username": "Venkat",
+    "password": "123456",
+    "role": "General User",
+    "lastLogin": "2026-05-26T07:07:47.874Z"
+  }
+]
